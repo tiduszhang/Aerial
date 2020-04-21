@@ -23,5 +23,8 @@ namespace Aerial
         public static string applefourKVideoURI = "https://t27q97zg19.execute-api.us-east-1.amazonaws.com/prod/aerialAltJSON/4kEntites.json";
         //original link to 4k apple videos, we can't parse this currently so I hosted a modified version
         //public static string applefourKVideoURI = "https://sylvan.apple.com/Aerials/2x/entries.json";
+        public static string appletvscreensaversVideoURI = "https://bzamayo.com/extras/apple-tv-screensavers.json";
+        //"http://benjaminmayo.co.uk/scripts/apple-tv-screensavers.json";
+        //https://bzamayo.com/extras/apple-tv-screensavers.json
     }
 }

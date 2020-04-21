@@ -70,9 +70,12 @@ namespace Aerial
             Caching.StartDelayedCache(aerialUrl);
 
             string entries = "";
-            if (Caching.IsHit(aerialUrl)) {
+            if (Caching.IsHit(aerialUrl))
+            {
                 entries = File.ReadAllText(Caching.Get(aerialUrl));
-            } else {
+            }
+            else
+            {
                 WebClient webClient = new WebClient();
                 entries = webClient.DownloadString(aerialUrl);
             }
@@ -83,8 +86,43 @@ namespace Aerial
             }
             catch (ArgumentException e)
             {
-                //the passed in entities document is invalid.
                 return null;
+            }
+            catch
+            {
+                //the passed in entities document is invalid.
+                try
+                {
+                    dynamic cached = ConvertToDynamicObject(entries);
+                    var cachedTempEntities = new List<IdAsset>();
+                    var datas = cached.data;
+                    foreach(var data in datas)
+                    {
+                        var idAsset = new IdAsset();
+                        idAsset.id = Guid.NewGuid().ToString();
+                        //idAsset.assets = new Asset[data.screensavers.Count];
+                        var assets = new List<Asset>();
+                        foreach (var screensaver in data.screensavers)
+                        {
+                            var asset = new Asset();
+                            asset.accessibilityLabel = data.name;
+                            asset.id = screensaver.identifier;
+                            asset.name = screensaver.identifier;
+                            asset.url = screensaver.videoURL;//screensaver.urls.h264;
+                            asset.timeOfDay = "year";
+                            asset.type = "video";
+
+                            assets.Add(asset);
+                        }
+                        idAsset.assets = assets.ToArray();
+                        cachedTempEntities.Add(idAsset);
+                    }
+                    cachedEntities = cachedTempEntities.ToArray();
+                }
+                catch (Exception ex)
+                {
+                    return null;
+                }
             }
 
 
@@ -99,7 +137,7 @@ namespace Aerial
             var settings = new RegSettings();
 
             //if no movies are selected to be played, just allow all
-            if(String.IsNullOrEmpty(settings.ChosenMovies))
+            if (String.IsNullOrEmpty(settings.ChosenMovies))
             {
                 return true;
             }
@@ -122,10 +160,24 @@ namespace Aerial
             if (splitString.Length > 1)
             {
                 return splitString[1];
-            } else
+            }
+            else
             {
                 return "NO ID IN STRING";
             }
+        }
+
+        /// <summary>
+        /// 转换成动态类型对象
+        /// </summary>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static dynamic ConvertToDynamicObject(string value)
+        {
+            var serializer = new JavaScriptSerializer();
+            //return serializer.Deserialize<object>(value);
+            serializer.RegisterConverters(new[] { new DynamicJsonConverter() });
+            return serializer.Deserialize<dynamic>(value);
         }
     }
 
@@ -142,10 +194,11 @@ namespace Aerial
         public string type;//" : "video",
         public string id;// : "b1-1",
         public string timeOfDay;//" : "day"
+        public string name;
 
         [NonSerialized]
         internal int numeric = 0;
-        
+
         public override string ToString()
         {
             return accessibilityLabel + (numeric == 0 ? "" : " " + numeric) + " " + timeOfDay + "";
