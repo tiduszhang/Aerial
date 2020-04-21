@@ -1,0 +1,171 @@
+[{
+  "initialAssetCount" : 4,
+  "version" : 1,
+  "assets" : [
+    {
+      "accessibilityLabel" : "Southern California to Baja",
+      "id" : "7719B48A-2005-4011-9280-2F64EEC6FD91",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A114_C001_0305OT_v10_SDR_FINAL_22062018_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Greenland",
+      "id" : "E4ED0B22-EB81-4D4F-A29E-7E1EA6B6D980",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/GL_G004_C010_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Korean and Japan Night",
+      "id" : "6C3D54AE-0871-498A-81D0-56ED24E5FE9F",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT026_363A_103NC_E1027_KOREA_JAPAN_NIGHT_v17_SDR_FINAL_25062018_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Los Angeles",
+      "id" : "829E69BA-BB53-4841-A138-4DF0C2A74236",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/LA_A006_C008_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "China",
+      "id" : "B876B645-3955-420E-99DF-60139E451CF3",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_CH_C007_C011_PSNK_v02_SDR_PS_FINAL_20180709_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Hong Kong",
+      "id" : "30313BC1-BF20-45EB-A7B1-5A6FFDBD2488",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/HK_B005_C011_4K_SDR_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Caribbean",
+      "id" : "D5CFB2FF-5F8C-4637-816B-3E42FC1229B8",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A108_C001_v09_SDR_FINAL_22062018_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Los Angeles",
+      "id" : "89B1643B-06DD-4DEC-B1B0-774493B0F7B7",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_LA_A009_C009_PSNK_v02_SDR_PS_FINAL_20180709_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Hong Kong",
+      "id" : "560E09E8-E89D-4ADB-8EEA-4754415383D4",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/HK_H004_C010_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "New Zealand",
+      "id" : "78911B7E-3C69-47AD-B635-9C2486F6301D",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A105_C003_0212CT_FLARE_v10_SDR_PS_FINAL_20180711_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Los Angeles",
+      "id" : "B730433D-1B3B-4B99-9500-A286BF7A9940",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/LA_A008_C004_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Ireland to Asia",
+      "id" : "62A926BE-AA0B-4A34-9653-78C4F130543F",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT329_117NC_401C_1037_IRELAND_TO_ASIA_v48_SDR_PS_FINAL_20180725_F0F6300_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Africa and the Middle East",
+      "id" : "2F72BC1E-3D76-456C-81EB-842EBA488C27",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A103_C002_0205DG_v12_SDR_FINAL_20180706_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "China",
+      "id" : "9CCB8297-E9F5-4699-AE1F-890CFBD5E29C",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_CH_C002_C005_PSNK_v05_SDR_PS_FINAL_20180709_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Dubai",
+      "id" : "AC9C09DD-1D97-4013-A09F-B0F5259E64C3",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/DB_D008_C010_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Sahara and Italy",
+      "id" : "D60B4DDA-69EB-4841-9690-E8BAE7BC4F80",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A009_C001_010181A_v09_SDR_PS_FINAL_20180725_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Greenland",
+      "id" : "30047FDA-3AE3-4E74-9575-3520AD77865B",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/GL_G002_C002_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Los Angeles",
+      "id" : "EC67726A-8212-4C5E-83CF-8412932740D2",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_LA_A006_C004_v01_SDR_FINAL_PS_20180730_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "California to Vegas",
+      "id" : "A2BE2E4A-AD4B-428A-9C41-BDAE1E78E816",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT306_139NC_139J_3066_CALI_TO_VEGAS_v07_SDR_FINAL_22062018_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Dubai",
+      "id" : "49790B7C-7D8C-466C-A09E-83E38B6BE87A",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/DB_D001_C001_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "West Africa to the Alps",
+      "id" : "63C042F0-90EF-4A95-B7CC-CC9A64BF8421",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A001_C004_1207W5_v23_SDR_FINAL_20180706_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Hong Kong",
+      "id" : "024891DE-B7F6-4187-BFE0-E6D237702EF0",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/HK_H004_C013_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Dubai",
+      "id" : "BAF76353-3475-4855-B7E1-CE96CC9BC3A7",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/DB_D011_C010_4K_SDR_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Caribbean",
+      "id" : "4F881F8B-A7D9-4FDB-A917-17BF6AC5A589",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT308_139K_142NC_CARIBBEAN_DAY_v09_SDR_FINAL_22062018_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Hong Kong",
+      "id" : "786E674C-BB22-4AA9-9BD3-114D2020EC4D",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/HK_H004_C001_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "China",
+      "id" : "6A74D52E-2447-4B84-AE45-0DEF2836C3CC",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT329_113NC_396B_1105_CHINA_v04_SDR_FINAL_20180706_F900F2700_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Dubai",
+      "id" : "02EA5DBE-3A67-4DFA-8528-12901DFD6CC1",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/DB_D002_C003_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "China",
+      "id" : "D5E76230-81A3-4F65-A1BA-51B8CADED625",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_CH_C007_C004_PSNK_v02_SDR_PS_FINAL_20180709_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Los Angeles",
+      "id" : "30A2A488-E708-42E7-9A90-B749A407AE1C",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_LA_A005_C009_PSNK_ALT_v08_SDR_PS_FINAL_20180709_SDR_4K_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Iran and Afghanistan",
+      "id" : "F439B0A7-D18C-4B14-9681-6520E6A74FE9",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_A083_C002_1130KZ_v04_SDR_PS_FINAL_20180725_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Dubai",
+      "id" : "802866E6-4AAF-4A69-96EA-C582651391F1",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/DB_D001_C005_4K_SDR_HEVC.mov","timeOfDay":"day"
+    },
+    {
+      "accessibilityLabel" : "Africa Night",
+      "id" : "A837FA8C-C643-4705-AE92-074EFDD067F7",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/comp_GMT312_162NC_139M_1041_AFRICA_NIGHT_v14_SDR_FINAL_20180706_SDR_4K_HEVC.mov","timeOfDay":"night"
+    },
+    {
+      "accessibilityLabel" : "Hong Kong",
+      "id" : "102C19D1-9D9F-48EC-B492-074C985C4D9F",
+      "url" : "https://sylvan.apple.com/Aerials/2x/Videos/HK_H004_C008_4K_SDR_HEVC.mov","timeOfDay":"day"
+    }
+  ]
+}]
