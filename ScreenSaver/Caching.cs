@@ -37,7 +37,7 @@ namespace Aerial
             // Delete partial temp files if any 
             foreach (var file in Directory.CreateDirectory(TempFolder).GetFiles())
             {
-                file.Delete();
+                //file.Delete();
             }
         }
 
@@ -65,19 +65,102 @@ namespace Aerial
             {
                 Task.Delay(DelayAmount).ContinueWith(t =>
                 {
-                    if (!IsCaching(url))
-                    {
-                        using (WebClient client = new WebClient())
-                        {
-                            client.DownloadFileCompleted += new AsyncCompletedEventHandler(OnDownloadFileComplete);
-                            string filename = Path.GetFileName(url);
-                            client.DownloadFileAsync(new Uri(url), Path.Combine(TempFolder, filename), filename);
-                            DownloadStart();
-                        }
-                    }
+                    DownloadFile(url);
+                    //if (!IsCaching(url))
+                    //{
+                    //    DownloadFile(url);
+                    //    //using (WebClient client = new WebClient())
+                    //    //{
+                    //    //    client.DownloadFileCompleted += new AsyncCompletedEventHandler(OnDownloadFileComplete);
+                    //    //    string filename = Path.GetFileName(url);
+                    //    //    client.DownloadFileAsync(new Uri(url), Path.Combine(TempFolder, filename), filename);
+                    //    //    DownloadStart();
+                    //    //}
+                    //}
                 });
             }
         }
+
+
+
+        /// <summary>
+        /// 创建WebClient对象(断点续接 ：  一般用于下载文件)
+        /// </summary>
+        /// <param name="seek"></param>
+        /// <returns></returns>
+        public static WebClient CreatedWebClient(long seek)
+        {
+            var webClient = new WebClientCore();
+
+            //设置不验证 
+            ServicePointManager.ServerCertificateValidationCallback = new System.Net.Security.RemoteCertificateValidationCallback((a, b, c, d) =>
+            {
+                return true;
+            });
+
+            webClient.Seek = seek;
+            return webClient;
+        }
+
+
+        private static void DownloadFile(string url)
+        {
+            using (WebClient client = new WebClient())
+            {
+                string filename = Path.GetFileName(url);
+                var filePath = Path.Combine(TempFolder, filename);
+                //client.DownloadFileAsync(new Uri(url), Path.Combine(TempFolder, filename), filename);
+
+                FileStream fileStream = new FileStream(filePath, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+                var webClient = CreatedWebClient(fileStream.Length);
+                try
+                {
+                    DownloadStart();
+                    using (var readStream = webClient.OpenRead(url))
+                    {
+
+                        if (fileStream.Length > 0)
+                        {
+                            fileStream.Seek(fileStream.Length, SeekOrigin.Current);
+                        }
+
+                        byte[] buffer = new byte[4096];
+                        int i = 0;
+                        int l = 0;
+                        int b = 0;
+
+                        while ((l = readStream.Read(buffer, 0, buffer.Length)) > 0)
+                        {
+                            i = i + l;
+                            fileStream.Write(buffer, 0, l);
+                            Array.Clear(buffer, 0, buffer.Length);
+
+                            if (b++ % 10 == 0)
+                            {
+                                fileStream.Flush(true);
+                            }
+                        }
+
+                        fileStream.Flush(true);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+
+                    OnDownloadFileComplete(client, new AsyncCompletedEventArgs(ex, false, filename));
+                }
+                fileStream.Close();
+                webClient.Dispose();
+
+                Thread.Sleep(1000);
+
+                OnDownloadFileComplete(client, new AsyncCompletedEventArgs(null, false, filename));
+            }
+        }
+
+
+
         private static void OnDownloadFileComplete(object sender, AsyncCompletedEventArgs e)
         {
             var filename = e.UserState.ToString();
@@ -85,20 +168,35 @@ namespace Aerial
             var cacheFullpath = Path.Combine(CacheFolder, filename);
             if (e.Cancelled == false && e.Error == null)
             {
-                // delete if old file exists
-                if (File.Exists(cacheFullpath))
-                    File.Delete(cacheFullpath);
+                FileInfo tempFileInfo = new FileInfo(tempFullPath);
+                if (tempFileInfo.Exists && tempFileInfo.Length > 0)
+                {
+                    // delete if old file exists
+                    if (File.Exists(cacheFullpath))
+                    {
+                        FileInfo cacheFileInfo = new FileInfo(cacheFullpath);
 
-                Directory.Move(tempFullPath, cacheFullpath);
+                        if (cacheFileInfo.Length == tempFileInfo.Length)
+                        {
+                            File.Delete(tempFullPath);
+                        }
+                        else
+                        {
+                            File.Copy(cacheFullpath, cacheFullpath + "." + DateTime.Now.ToString("yyyyMMddHHmmss") + ".bak");
+                            File.Delete(cacheFullpath);
+                            File.Move(tempFullPath, cacheFullpath);
+                        }
+                    }
+                }
             }
             else
             {
                 // attempt to remove partially downloaded file
-                File.Delete(tempFullPath);
+                // File.Delete(tempFullPath);
             }
 
             DownloadEnd();
-            
+
         }
 
         internal static async void UpdateCachePath(string oldCacheDirectory, string cacheLocation)
@@ -167,7 +265,7 @@ namespace Aerial
         {
             if (path == null) path = CacheFolder;
             long size = 0;
-            if (Directory.Exists(path)) 
+            if (Directory.Exists(path))
                 foreach (string name in Directory.GetFiles(path, "*.*"))
                     size += new FileInfo(name).Length;
 

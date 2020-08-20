@@ -52,11 +52,11 @@
             this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnClose.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Location = new System.Drawing.Point(930, 10);
+            this.btnClose.Location = new System.Drawing.Point(930, 9);
             this.btnClose.Margin = new System.Windows.Forms.Padding(2);
             this.btnClose.Name = "btnClose";
             this.btnClose.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnClose.Size = new System.Drawing.Size(22, 24);
+            this.btnClose.Size = new System.Drawing.Size(22, 22);
             this.btnClose.TabIndex = 2;
             this.btnClose.Text = "✖";
             this.btnClose.UseVisualStyleBackColor = false;
@@ -70,11 +70,11 @@
             this.btnSettings.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSettings.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSettings.ForeColor = System.Drawing.Color.White;
-            this.btnSettings.Location = new System.Drawing.Point(904, 10);
+            this.btnSettings.Location = new System.Drawing.Point(904, 9);
             this.btnSettings.Margin = new System.Windows.Forms.Padding(2);
             this.btnSettings.Name = "btnSettings";
             this.btnSettings.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
-            this.btnSettings.Size = new System.Drawing.Size(22, 24);
+            this.btnSettings.Size = new System.Drawing.Size(22, 22);
             this.btnSettings.TabIndex = 3;
             this.btnSettings.Text = "⚙";
             this.btnSettings.UseVisualStyleBackColor = false;
@@ -82,11 +82,11 @@
             // 
             // ScreenSaverForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(960, 540);
+            this.ClientSize = new System.Drawing.Size(960, 498);
             this.Controls.Add(this.btnSettings);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.player);
