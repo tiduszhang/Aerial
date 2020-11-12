@@ -77,7 +77,15 @@ namespace Aerial
             else
             {
                 WebClient webClient = new WebClient();
-                entries = webClient.DownloadString(aerialUrl);
+                try
+                {
+                    entries = webClient.DownloadString(aerialUrl);
+                }
+                catch (Exception ex)
+                {
+                    ex.ToString();
+                    //return null;
+                }
             }
 
             try
@@ -96,7 +104,7 @@ namespace Aerial
                     dynamic cached = ConvertToDynamicObject(entries);
                     var cachedTempEntities = new List<IdAsset>();
                     var datas = cached.data;
-                    foreach(var data in datas)
+                    foreach (var data in datas)
                     {
                         var idAsset = new IdAsset();
                         idAsset.id = Guid.NewGuid().ToString();
